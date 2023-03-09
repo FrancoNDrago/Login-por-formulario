@@ -3,7 +3,6 @@ const userRouter = express.Router();
 const { userModel } = require("../managerFiles/models/user.model");
 const mongoose = require("mongoose");
 
-
 userRouter.get("/", async (req, res) => {
 	try{
 		let users = await userModel.find();
@@ -37,3 +36,5 @@ mongoose.connect("mongodb+srv://Drago:Coderhouse123@cluster0.gsvnnyg.mongodb.net
 		console.log("error", error);
 	}
 });
+
+module.exports.userRouter = userRouter;
